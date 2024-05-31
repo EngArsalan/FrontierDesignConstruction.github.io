@@ -33,12 +33,20 @@
         }
 
         /* Adjustments to reduce spacing */
-        #home {
-            margin-bottom: 4rem; /* Adjust as necessary to control spacing */
-        }
-        #about {
-            padding-top: 4rem;
+        #about, #services {
+            padding-top: 2rem;
             padding-bottom: 2rem; /* Adjust padding for better spacing control */
+        }
+
+        /* Adjustments to reduce spacing */
+        #home {
+            margin: 0; /* Remove margins */
+        }
+
+        /* Remove padding and margin from body and html elements */
+        body, html {
+            padding: 0;
+            margin: 0;
         }
     </style>
 </head>
@@ -71,8 +79,8 @@
 <!-- Main Content -->
 <main>
     <!-- Hero Section -->
-    <section id="home" class="bg-cover bg-center h-96 flex items-center justify-center" style="background-image: url('background.jpg');">
-        <div class="bg-black bg-opacity-50 p-6 rounded-lg text-center text-white">
+    <section id="home" class="bg-cover bg-center h-96 flex items-center justify-center" style="background-image: url('background.jpg'); margin-top: 0;">
+        <div class="p-6 rounded-lg text-center text-white" style="background-color: #92cddb;">
             <div id="slideshow-container" class="relative h-full w-full">
                 <!-- Slide 1 -->
                 <div class="mySlides fade">
