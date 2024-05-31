@@ -6,32 +6,33 @@
     <title>Frontier Design and Construction</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        .header-bg { background-color: #027b86; }
-        .btn-orange { background-color: #FFB400; }
-        .bg-beige { background-color: #eee4e3; }
-        .text-sky { color: #79CFE4; }
+        .header-bg { background-color: #1c3553; color: #fff; }
+        .footer-bg { background-color: #1c3553; color: #fff; }
+        .btn-coral { background-color: #ee5a53; }
+        .bg-mint { background-color: #e8f6f5; }
+        .text-steel-blue { color: #4d7e9d; }
         .hover-card:hover { transform: translateY(-5px); transition: transform 0.3s ease; }
-        .hover-card-title:hover { color: #027b86; transition: color 0.3s ease; }
-        .footer-bg { background-color: #016479; }
+        .hover-card-title:hover { color: #ee5a53; transition: color 0.3s ease; }
+        .card-bg { background-color: #92cddb; }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
 
 <!-- Header -->
-<header class="bg-white shadow header-bg text-white">
+<header class="header-bg shadow">
     <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
         <div class="flex items-center space-x-4">
             <img src="Company_LOGO.jpg" alt="Company Logo" class="h-10">
             <h1 class="text-2xl font-bold">Frontier Design and Construction</h1>
         </div>
         <div class="flex space-x-4">
-            <a href="mailto:arsalankhalid21@hotmail.com" class="flex items-center px-4 py-2 btn-orange text-white rounded-md hover:bg-yellow-600">
+            <a href="mailto:arsalankhalid21@hotmail.com" class="flex items-center px-4 py-2 btn-coral text-white rounded-md hover:bg-red-600">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12l-4-4-4 4m8 0l-4 4-4-4" />
                 </svg>
                 Email
             </a>
-            <a href="https://wa.me/923220391601" class="flex items-center px-4 py-2 btn-orange text-white rounded-md hover:bg-green-700">
+            <a href="https://wa.me/923220391601" class="flex items-center px-4 py-2 btn-coral text-white rounded-md hover:bg-red-600">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.715 14.9l1.283-1.39.349-1.516-1.716-.153L8.171 9.9l2.246.447 1.603-1.049L10.309 8 10 5.515l1.309-.211.647-.004 1.983 2.189 1.246-.719.768.53-.95 1.396-.256 2.074-1.57.804 1.648 1.699L14 19h-5.5L8 15.5l.715-.6z" />
                 </svg>
@@ -52,11 +53,11 @@
     </section>
 
     <!-- About Us Section -->
-    <section id="about" class="max-w-7xl mx-auto py-12 px-4 bg-beige">
+    <section id="about" class="max-w-7xl mx-auto py-12 px-4 bg-mint">
         <div class="flex flex-col items-center text-center md:flex-row md:items-start md:text-left">
             <img src="ARSALAN_PLACEHOLDER.jpg" alt="CEO Photo" class="h-40 w-40 rounded-full object-cover mx-auto md:mx-0 md:mr-6 mb-4 md:mb-0">
             <div>
-                <h3 class="text-3xl font-bold text-sky hover-card-title">Arsalan Khalid Khan</h3>
+                <h3 class="text-3xl font-bold text-steel-blue hover-card-title">Arsalan Khalid Khan</h3>
                 <p>Chief Executive Officer</p>
                 <div class="mt-4 mb-2"></div>
                 <p class="mt-4">Arsalan Khalid Khan, a PEC-registered engineer Civil/66076 with a Bachelor's degree in Civil Engineering from Cyprus International University, leads our team with expertise and dedication.</p>
@@ -65,14 +66,14 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="bg-beige py-12">
+    <section id="services" class="bg-mint py-12">
         <div class="max-w-7xl mx-auto text-center">
-            <h3 class="text-3xl font-bold mb-6 text-sky hover-card-title">Our Services</h3>
+            <h3 class="text-3xl font-bold mb-6 text-steel-blue hover-card-title">Our Services</h3>
             <div class="flex flex-wrap justify-center space-x-4">
                 <!-- Conceptualization -->
-                <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card">
+                <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
                     <img src="conceptualization.jpg" alt="Conceptualization" class="h-40 w-full object-cover rounded-md mb-4">
-                    <h4 class="font-bold text-sky hover-card-title">Conceptualization</h4>
+                    <h4 class="font-bold text-steel-blue hover-card-title">Conceptualization</h4>
                     <p>Floor Plans</p>
                     <p>Cost Estimates</p>
                     <p>BOQ or BQ</p>
@@ -80,9 +81,9 @@
                     <p>Site Analysis</p>
                 </div>
                 <!-- Design -->
-                <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card">
+                <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
                     <img src="design.jpg" alt="Design" class="h-40 w-full object-cover rounded-md mb-4">
-                    <h4 class="font-bold text-sky hover-card-title">Design</h4>
+                    <h4 class="font-bold text-steel-blue hover-card-title">Design</h4>
                     <p>Architectural Drawings</p>
                     <p>Structural Drawings</p>
                     <p>3D Renderings</p>
@@ -90,9 +91,9 @@
                     <p>MEP (Mechanical, Electrical, and Plumbing) Design</p>
                 </div>
                 <!-- Construction -->
-                <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card">
+                <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
                     <img src="construction.jpg" alt="Construction" class="h-40 w-full object-cover rounded-md mb-4">
-                    <h4 class="font-bold text-sky hover-card-title">Construction</h4>
+                    <h4 class="font-bold text-steel-blue hover-card-title">Construction</h4>
                     <p>Grey Structure</p>
                     <p>Finishing Touches</p>
                     <p>Project Management</p>
@@ -100,9 +101,9 @@
                     <p>Safety Management</p>
                 </div>
                 <!-- Landscaping -->
-                <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card">
+                <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
                     <img src="landscaping.jpg" alt="Landscaping" class="h-40 w-full object-cover rounded-md mb-4">
-                    <h4 class="font-bold text-sky hover-card-title">Landscaping</h4>
+                    <h4 class="font-bold text-steel-blue hover-card-title">Landscaping</h4>
                     <p>Garden Design</p>
                     <p>Hardscaping</p>
                     <p>Irrigation Systems</p>
@@ -115,7 +116,7 @@
 
     <!-- Projects Section -->
     <section id="projects" class="max-w-7xl mx-auto py-12">
-        <h3 class="text-3xl font-bold text-center mb-6 text-sky hover-card-title">Our Projects</h3>
+        <h3 class="text-3xl font-bold text-center mb-6 text-steel-blue hover-card-title">Our Projects</h3>
         <div class="flex flex-wrap justify-center">
             <div class="w-60 h-60 bg-gray-300 m-2 flex items-center justify-center rounded-lg shadow hover-card transition duration-300">Commercial Plaza</div>
             <div class="w-60 h-60 bg-gray-300 m-2 flex items-center justify-center rounded-lg shadow hover-card transition duration-300">Residential Complex</div>
@@ -125,16 +126,16 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="max-w-7xl mx-auto py-12 px-4 bg-beige">
-        <h3 class="text-3xl font-bold text-center mb-6 text-sky hover-card-title">Client Testimonials</h3>
+    <section id="testimonials" class="max-w-7xl mx-auto py-12 px-4 bg-mint">
+        <h3 class="text-3xl font-bold text-center mb-6 text-steel-blue hover-card-title">Client Testimonials</h3>
         <div class="flex flex-wrap justify-center space-x-4">
-            <div class="bg-white shadow p-4 rounded-lg mb-4 w-full md:w-1/3 hover-card">
+            <div class="bg-white shadow p-4 rounded-lg mb-4 w-full md:w-1/3 hover-card card-bg">
                 <p>"Frontier Design and Construction turned our dream home into reality. Their attention to detail and professionalism were beyond our expectations!" - <strong>Client A</strong></p>
             </div>
-            <div class="bg-white shadow p-4 rounded-lg mb-4 w-full md:w-1/3 hover-card">
+            <div class="bg-white shadow p-4 rounded-lg mb-4 w-full md:w-1/3 hover-card card-bg">
                 <p>"We highly recommend Frontier for any commercial construction projects. They exceeded our expectations and delivered on time." - <strong>Client B</strong></p>
             </div>
-            <div class="bg-white shadow p-4 rounded-lg mb-4 w-full md:w-1/3 hover-card">
+            <div class="bg-white shadow p-4 rounded-lg mb-4 w-full md:w-1/3 hover-card card-bg">
                 <p>"Their team provided excellent service from start to finish. Our urban park project was a huge success thanks to their expertise." - <strong>Client C</strong></p>
             </div>
         </div>
@@ -142,9 +143,9 @@
 </main>
 
 <!-- Footer -->
-<footer id="contact" class="bg-gray-800 text-white py-6 footer-bg">
+<footer id="contact" class="footer-bg py-6">
     <div class="max-w-7xl mx-auto text-center">
-        <p class="mb-2">Contact Us: <a href="mailto:arsalankhalid21@hotmail.com" class="text-blue-400 hover:underline">arsalankhalid21@hotmail.com</a> | <a href="https://wa.me/923220391601" class="text-green-400 hover:underline">+92 322 0391601</a></p>
+        <p class="mb-2">Contact Us: <a href="mailto:arsalankhalid21@hotmail.com" class="text-red-400 hover:underline">arsalankhalid21@hotmail.com</a> | <a href="https://wa.me/923220391601" class="text-red-400 hover:underline">+92 322 0391601</a></p>
         <p class="mb-4">Follow us on:
             <a href="https://www.facebook.com/profile.php?id=61555198861935" class="text-blue-400 hover:underline">Facebook</a> |
             <a href="https://www.linkedin.com/in/arsalan-khalid-ab245b194/" class="text-blue-400 hover:underline">LinkedIn</a>
