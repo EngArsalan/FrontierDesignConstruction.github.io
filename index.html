@@ -5,119 +5,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frontier Design and Construction</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .hover-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+        .hover-card-title:hover {
+            color: #3b82f6;
+            transition: color 0.3s ease;
+        }
+    </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
 
-    <!-- Header -->
-    <header class="bg-white shadow">
-        <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
-            <div class="flex items-center space-x-4">
-                <img src="Company_LOGO.jpg" alt="Company Logo" class="h-10">
-                <h1 class="text-2xl font-bold">Frontier Design and Construction</h1>
-            </div>
-            <nav class="space-x-4">
-                <a href="#home" class="hover:text-blue-500">Home</a>
-                <a href="#about" class="hover:text-blue-500">About Us</a>
-                <a href="#services" class="hover:text-blue-500">Services</a>
-                <a href="#projects" class="hover:text-blue-500">Projects</a>
-                <a href="#team" class="hover:text-blue-500">Team</a>
-                <a href="#contact" class="hover:text-blue-500">Contact</a>
-            </nav>
+<!-- Header -->
+<header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+        <div class="flex items-center space-x-4">
+            <img src="Company_LOGO.jpg" alt="Company Logo" class="h-10">
+            <h1 class="text-2xl font-bold text-blue-800">Frontier Design and Construction</h1>
         </div>
-    </header>
+        <div class="flex space-x-4">
+            <a href="mailto:arsalankhalid21@hotmail.com" class="flex items-center px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12l-4-4-4 4m8 0l-4 4-4-4" />
+                </svg>
+                Email
+            </a>
+            <a href="https://wa.me/923220391601" class="flex items-center px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.715 14.9l1.283-1.39.349-1.516-1.716-.153L8.171 9.9l2.246.447 1.603-1.049L10.309 8 10 5.515l1.309-.211.647-.004 1.983 2.189 1.246-.719.768.53-.95 1.396-.256 2.074-1.57.804 1.648 1.699L14 19h-5.5L8 15.5l.715-.6z" />
+                </svg>
+                WhatsApp
+            </a>
+        </div>
+    </div>
+</header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="bg-cover bg-center h-96 flex items-center justify-center" style="background-image: url('background.jpg');">
-            <div class="bg-black bg-opacity-50 p-6 rounded-lg text-center text-white">
-                <h2 class="text-4xl font-bold mb-4">Engineering Dreams into Reality</h2>
-                <p class="text-lg">Bring your vision to life with Frontier Design and Construction</p>
-            </div>
-        </section>
+<!-- Main Content -->
+<main>
+    <!-- Hero Section -->
+    <section id="home" class="bg-cover bg-center h-96 flex items-center justify-center" style="background-image: url('background.jpg');">
+        <div class="bg-black bg-opacity-50 p-6 rounded-lg text-center text-white">
+            <h2 class="text-4xl font-bold mb-4">Engineering Dreams into Reality</h2>
+            <p class="text-lg">Bring your vision to life with Frontier Design and Construction</p>
+        </div>
+    </section>
 
-        <!-- About Us Section -->
-        <section id="about" class="max-w-7xl mx-auto py-12 px-4">
-            <div class="flex flex-col items-center text-center md:flex-row md:items-start md:text-left">
-                <img src="ARSALAN_PLACEHOLDER.jpg" alt="CEO Photo" class="h-40 w-40 rounded-full object-cover mx-auto md:mx-0 md:mr-6 mb-4 md:mb-0">
-                <div>
-                    <h3 class="text-3xl font-bold">Arsalan Khalid Khan</h3>
-                    <p>Chief Executive Officer</p>
-                    <div class="mt-4 mb-2">
-                        <img src="ARSALAN_DEGREE_VERIFIED.jpg" alt="Degree" class="h-12 inline-block"> 
-<!--                         <img src="EngineerCard.png" alt="Engineer Card" class="h-12 inline-block"> -->
-                    </div>
-                    <p class="mt-4">Arsalan Khalid Khan, a PEC-registered engineer with a Bachelor's degree in Civil Engineering from Cyprus International University, leads our team with expertise and dedication.</p>
+    <!-- About Us Section -->
+    <section id="about" class="max-w-7xl mx-auto py-12 px-4">
+        <div class="flex flex-col items-center text-center md:flex-row md:items-start md:text-left">
+            <img src="ARSALAN_PLACEHOLDER.jpg" alt="CEO Photo" class="h-40 w-40 rounded-full object-cover mx-auto md:mx-0 md:mr-6 mb-4 md:mb-0">
+            <div>
+                <h3 class="text-3xl font-bold hover-card-title">Arsalan Khalid Khan</h3>
+                <p>Chief Executive Officer</p>
+                <div class="mt-4 mb-2">
                 </div>
+                <p class="mt-4">Arsalan Khalid Khan, a PEC-registered engineer Civil/66076 with a Bachelor's degree in Civil Engineering from Cyprus International University, leads our team with expertise and dedication.</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Services Section -->
-        <section id="services" class="bg-gray-200 py-12">
-            <div class="max-w-7xl mx-auto text-center">
-                <h3 class="text-3xl font-bold mb-6">Our Services</h3>
-                <div class="flex flex-wrap justify-center space-x-4">
-                    <div class="bg-white shadow p-4 rounded-lg mb-4 w-52">
-                        <h4 class="font-bold">Conceptualization</h4>
-                        <p>Floor plans, Cost estimates</p>
-                    </div>
-                    <div class="bg-white shadow p-4 rounded-lg mb-4 w-52">
-                        <h4 class="font-bold">Design</h4>
-                        <p>Architectural and Civil designs</p>
-                    </div>
-                    <div class="bg-white shadow p-4 rounded-lg mb-4 w-52">
-                        <h4 class="font-bold">Construction</h4>
-                        <p>Grey structure, Finishing touches</p>
-                    </div>
-                    <div class="bg-white shadow p-4 rounded-lg mb-4 w-52">
-                        <h4 class="font-bold">Landscaping</h4>
-                        <p>Beautiful outdoor spaces</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="max-w-7xl mx-auto py-12">
-            <h3 class="text-3xl font-bold text-center mb-6">Our Projects</h3>
-            <div class="flex flex-wrap justify-center">
-                <div class="w-60 h-60 bg-gray-300 m-2 flex items-center justify-center">Commercial Plaza</div>
-                <div class="w-60 h-60 bg-gray-300 m-2 flex items-center justify-center">Residential Complex</div>
-                <div class="w-60 h-60 bg-gray-300 m-2 flex items-center justify-center">Urban Park</div>
-                <div class="w-60 h-60 bg-gray-300 m-2 flex items-center justify-center">Luxury Villas</div>
-            </div>
-        </section>
-
-
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="max-w-7xl mx-auto py-12 px-4">
-            <h3 class="text-3xl font-bold text-center mb-6">Client Testimonials</h3>
-            <div class="flex flex-wrap justify-center space-x-4">
-                <div class="bg-white shadow p-4 rounded-lg mb-4 w-full md:w-1/3">
-                    <p>"Frontier Design and Construction turned our dream home into reality. Their attention to detail and professionalism were beyond our expectations!" - <strong>Client A</strong></p>
-                </div>
-                <div class="bg-white shadow p-4 rounded-lg mb-4 w-full md:w-1/3">
-                    <p>"We highly recommend Frontier for any commercial construction projects. They exceeded our expectations and delivered on time." - <strong>Client B</strong></p>
-                </div>
-                <div class="bg-white shadow p-4 rounded-lg mb-4 w-full md:w-1/3">
-                    <p>"Their team provided excellent service from start to finish. Our urban park project was a huge success thanks to their expertise." - <strong>Client C</strong></p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer id="contact" class="bg-gray-800 text-white py-6">
+    <!-- Services Section -->
+    <section id="services" class="bg-gray-200 py-12">
         <div class="max-w-7xl mx-auto text-center">
-            <p class="mb-2">Contact Us: info@frontierdesignandconstructions.com | +1 234 5678</p>
-            <p class="mb-4">Follow us on:
-                <a href="#" class="hover:underline">Facebook</a> |
-                <a href="#" class="hover:underline">Twitter</a> |
-                <a href="#" class="hover:underline">LinkedIn</a>
-            </p>
-            <p>&copy; 2023 Frontier Design and Construction</p>
+            <h3 class="text-3xl font-bold mb-6 hover-card-title">Our Services</h3>
+            <div class="flex flex-wrap justify-center space-x-4">
+                <div class="bg-white shadow p-4 rounded-lg mb-4 w-52 hover-card">
+                    <h4 class="font-bold hover-card-title">Conceptualization</h4>
+                    <p>Floor plans, Cost estimates</p>
+                </div>
+                <div class="bg-white shadow p-4 rounded-lg mb-4 w-52 hover-card">
+                    <h4 class="font-bold hover-card-title">Design</h4>
+                    <p>Architectural and Structural Drawings</p>
+                </div>
+                <div class="bg-white shadow p-4 rounded-lg mb-4 w-52 hover-card">
+                    <h4 class="font-bold hover-card-title">Construction</h4>
+                    <p>Grey structure, Finishing touches</p>
+                </div>
+                <div class="bg-white shadow p-4 rounded-lg mb-4 w-52 hover-card">
+                    <h4 class="font-bold hover-card-title">Landscaping</h4>
+                    <p>Beautiful outdoor spaces</p>
+                </div>
+            </div>
         </div>
-    </footer>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="max-w-7xl mx-auto py-12">
+        <h3 class="text-3xl font-bold text-center mb-6 hover-card-title">Our Projects</h3>
+        <div class="flex flex-wrap justify-center">
+            <div class="w-60 h-60 bg-gray-300 m-2 flex items-center justify-center rounded-lg shadow hover-card transition duration-300">Commercial Plaza</div>
+            <div class="w-60 h-60 bg-gray-300 m-2 flex items-center justify-center rounded-lg shadow hover-card transition duration-300">Residential Complex</div>
+            <div class="w-60 h-60 bg-gray-300 m-2 flex items-center justify-center rounded-lg shadow hover-card transition duration-300">Urban Park</div>
+            <div class="w-60 h-60 bg-gray-300 m-2 flex items-center justify-center rounded-lg shadow hover-card transition duration-300">Luxury Villas</div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="max-w-7xl mx-auto py-12 px-4">
+        <h3 class="text-3xl font-bold text-center mb-6 hover-card-title">Client Testimonials</h3>
+        <div class="flex flex-wrap justify-center space-x-4">
+            <div class="bg-white shadow p-4 rounded-lg mb-4 w-full md:w-1/3 hover-card">
+                <p>"Frontier Design and Construction turned our dream home into reality. Their attention to detail and professionalism were beyond our expectations!" - <strong>Client A</strong></p>
+            </div>
+            <div class="bg-white shadow p-4 rounded-lg mb-4 w-full md:w-1/3 hover-card">
+                <p>"We highly recommend Frontier for any commercial construction projects. They exceeded our expectations and delivered on time." - <strong>Client B</strong></p>
+            </div>
+            <div class="bg-white shadow p-4 rounded-lg mb-4 w-full md:w-1/3 hover-card">
+                <p>"Their team provided excellent service from start to finish. Our urban park project was a huge success thanks to their expertise." - <strong>Client C</strong></p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer id="contact" class="bg-gray-800 text-white py-6">
+    <div class="max-w-7xl mx-auto text-center">
+        <p class="mb-2">Contact Us: <a href="mailto:arsalankhalid21@hotmail.com" class="text-blue-400 hover:underline">arsalankhalid21@hotmail.com</a> | <a href="https://wa.me/923220391601" class="text-green-400 hover:underline">+92 322 0391601</a></p>
+        <p class="mb-4">Follow us on:
+            <a href="https://www.facebook.com/profile.php?id=61555198861935" class="text-blue-400 hover:underline">Facebook</a> |
+            <a href="https://www.linkedin.com/in/arsalan-khalid-ab245b194/" class="text-blue-400 hover:underline">LinkedIn</a>
+        </p>
+        <p>&copy; 2023 Frontier Design and Construction</p>
+    </div>
+</footer>
 
 </body>
 </html>
