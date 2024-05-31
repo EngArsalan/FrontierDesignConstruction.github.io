@@ -21,6 +21,25 @@
             object-fit: cover;
             border-radius: 0.25rem; /* for rounded corners */
         }
+
+        /* Fade-in Animation */
+        .fade {
+            animation: fadeEffect 1.5s ease;
+        }
+
+        @keyframes fadeEffect {
+            from { opacity: .4 }
+            to { opacity: 1 }
+        }
+
+        /* Adjustments to reduce spacing */
+        #home {
+            margin-bottom: 4rem; /* Adjust as necessary to control spacing */
+        }
+        #about {
+            padding-top: 4rem;
+            padding-bottom: 2rem; /* Adjust padding for better spacing control */
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
@@ -54,8 +73,28 @@
     <!-- Hero Section -->
     <section id="home" class="bg-cover bg-center h-96 flex items-center justify-center" style="background-image: url('background.jpg');">
         <div class="bg-black bg-opacity-50 p-6 rounded-lg text-center text-white">
-            <h2 class="text-4xl font-bold mb-4">Engineering Dreams into Reality</h2>
-            <p class="text-lg">Bring your vision to life with Frontier Design and Construction</p>
+            <div id="slideshow-container" class="relative h-full w-full">
+                <!-- Slide 1 -->
+                <div class="mySlides fade">
+                    <div class="text-4xl font-bold mb-4">Engineering Dreams into Reality</div>
+                    <p class="text-lg">"The road to success is always under construction."</p>
+                </div>
+                <!-- Slide 2 -->
+                <div class="mySlides fade">
+                    <div class="text-4xl font-bold mb-4">Engineering Dreams into Reality</div>
+                    <p class="text-lg">"Architecture should speak of its time and place, but yearn for timelessness."</p>
+                </div>
+                <!-- Slide 3 -->
+                <div class="mySlides fade">
+                    <div class="text-4xl font-bold mb-4">Engineering Dreams into Reality</div>
+                    <p class="text-lg">"Civil engineering is the art of directing the great sources of power in nature for the use and convenience of man."</p>
+                </div>
+                <!-- Slide 4 -->
+                <div class="mySlides fade">
+                    <div class="text-4xl font-bold mb-4">Engineering Dreams into Reality</div>
+                    <p class="text-lg">"Great architecture exists to create timeless, free, joyous spaces where the human spirit can soar."</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -65,9 +104,10 @@
             <img src="ARSALAN_PLACEHOLDER.jpg" alt="CEO Photo" class="h-40 w-40 rounded-full object-cover mx-auto md:mx-0 md:mr-6 mb-4 md:mb-0">
             <div>
                 <h3 class="text-3xl font-bold text-steel-blue hover-card-title">Arsalan Khalid Khan</h3>
-                <p>Chief Executive Officer</p>
+                <p>Architectural/Civil Engineer</p>
+                <p>CEO/OWNER</p>
                 <div class="mt-4 mb-2"></div>
-                <p class="mt-4">Arsalan Khalid Khan, a PEC-registered engineer Civil/66076 with a Bachelor's degree in Civil Engineering from Cyprus International University, leads our team with expertise and dedication.</p>
+                <p class="mt-4">Registered with the Washington Accord, MUDEK, and the Pakistan Engineering Council. I hold a Bachelor's degree from Cyprus International University.</p>
             </div>
         </div>
     </section>
@@ -142,7 +182,7 @@
             </div>
             <!-- Luxury Villas -->
             <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
-                <img src="luxury_villa.jpg" alt="Luxury Villas" class="card-img rounded-md mb-4">
+                <img src="luxury_villas.jpg" alt="Luxury Villas" class="card-img rounded-md mb-4">
                 <h4 class="font-bold text-steel-blue hover-card-title">Luxury Villas</h4>
             </div>
         </div>
@@ -153,11 +193,18 @@
         <h3 class="text-3xl font-bold text-center mb-6 text-steel-blue hover-card-title">Client Testimonials</h3>
         <div class="flex flex-wrap justify-center space-x-4">
             <div class="bg-white shadow p-4 rounded-lg mb-4 w-full md:w-1/3 hover-card card-bg">
-                <p>"Frontier Design and Construction turned our dream Urban Park Project into reality. Their attention to detail and professionalism were beyond our expectations!" - <strong>Army Welfare Trust-Peshawar</strong></p>
+                <p>"Frontier Design and Construction turned our dream home into reality. Their attention to detail and professionalism were beyond our expectations!" - <strong>Client A</strong></p>
+            </div>
+            <div class="bg-white shadow p-4 rounded-lg mb-4 w-full md:w-1/3 hover-card card-bg">
+                <p>"We highly recommend Frontier for any commercial construction projects. They exceeded our expectations and delivered on time." - <strong>Client B</strong></p>
+            </div>
+            <div class="bg-white shadow p-4 rounded-lg mb-4 w-full md:w-1/3 hover-card card-bg">
+                <p>"Their team provided excellent service from start to finish. Our urban park project was a huge success thanks to their expertise." - <strong>Client C</strong></p>
             </div>
         </div>
     </section>
 </main>
+
 <!-- Footer -->
 <footer id="contact" class="footer-bg py-6">
     <div class="max-w-7xl mx-auto text-center">
@@ -169,6 +216,22 @@
         <p>&copy; 2023 Frontier Design and Construction</p>
     </div>
 </footer>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let slides = document.getElementsByClassName("mySlides");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 4000); // Change slide every 4 seconds
+    }
+</script>
 
 </body>
 </html>
