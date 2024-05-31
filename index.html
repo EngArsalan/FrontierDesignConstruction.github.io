@@ -1,3 +1,73 @@
+Let's proceed step-by-step to update the "Our Projects" section to include images for each project and change the color of the cards when the user hovers over them.
+
+### Step 1: Add Image Placeholders for Each Project in "Our Projects" Section
+
+We'll follow a similar arrangement as the "Our Services" section to ensure consistency.
+
+### Updated `index.html` for "Our Projects" Section
+
+```html
+<!-- Projects Section -->
+<section id="projects" class="max-w-7xl mx-auto py-12 bg-mint">
+    <h3 class="text-3xl font-bold text-center mb-6 text-steel-blue hover-card-title">Our Projects</h3>
+    <div class="flex flex-wrap justify-center space-x-4">
+        <!-- Commercial Plaza -->
+        <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
+            <img src="commercial_plaza.jpg" alt="Commercial Plaza" class="card-img rounded-md mb-4">
+            <h4 class="font-bold text-steel-blue hover-card-title">Commercial Plaza</h4>
+        </div>
+        <!-- Residential Complex -->
+        <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
+            <img src="residential_complex.jpg" alt="Residential Complex" class="card-img rounded-md mb-4">
+            <h4 class="font-bold text-steel-blue hover-card-title">Residential Complex</h4>
+        </div>
+        <!-- Urban Park -->
+        <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
+            <img src="urban_park.jpg" alt="Urban Park" class="card-img rounded-md mb-4">
+            <h4 class="font-bold text-steel-blue hover-card-title">Urban Park</h4>
+        </div>
+        <!-- Luxury Villas -->
+        <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
+            <img src="luxury_villas.jpg" alt="Luxury Villas" class="card-img rounded-md mb-4">
+            <h4 class="font-bold text-steel-blue hover-card-title">Luxury Villas</h4>
+        </div>
+    </div>
+</section>
+```
+
+### Step 2: Add Hover Effect for Card Color Change using Tailwind CSS and Custom CSS
+
+We'll introduce a hover effect that changes the background color of the cards when a user hovers over them.
+
+### Updated CSS with Hover Effects
+
+Update the `<style>` section within the `<head>` of the `index.html` file as follows:
+
+```html
+<style>
+    .header-bg { background-color: #1c3553; color: #fff; }
+    .footer-bg { background-color: #1c3553; color: #fff; }
+    .btn-coral { background-color: #ef6363; }
+    .bg-mint { background-color: #e8f6f5; }
+    .text-steel-blue { color: #4d7e9d; }
+    .hover-card { transition: all 0.3s ease; }
+    .hover-card:hover { transform: translateY(-5px); background-color: #ef6363; color: white; }
+    .hover-card-title:hover { color: #1c3553; transition: color 0.3s ease; }
+    .card-bg { background-color: #92cddb; }
+    .card-img {
+        height: 200px; /* Adjust as necessary for your design */
+        width: 100%;
+        object-fit: cover;
+        border-radius: 0.25rem; /* for rounded corners */
+    }
+</style>
+```
+
+### Integrated `index.html` with Full Changes
+
+The complete integrated `index.html` with the updated "Our Projects" section and new hover effects:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,12 +78,19 @@
     <style>
         .header-bg { background-color: #1c3553; color: #fff; }
         .footer-bg { background-color: #1c3553; color: #fff; }
-        .btn-coral { background-color: #ee5a53; }
+        .btn-coral { background-color: #ef6363; }
         .bg-mint { background-color: #e8f6f5; }
         .text-steel-blue { color: #4d7e9d; }
-        .hover-card:hover { transform: translateY(-5px); transition: transform 0.3s ease; }
-        .hover-card-title:hover { color: #ee5a53; transition: color 0.3s ease; }
+        .hover-card { transition: all 0.3s ease; }
+        .hover-card:hover { transform: translateY(-5px); background-color: #ef6363; color: white; }
+        .hover-card-title:hover { color: #1c3553; transition: color 0.3s ease; }
         .card-bg { background-color: #92cddb; }
+        .card-img {
+            height: 200px; /* Adjust as necessary for your design */
+            width: 100%;
+            object-fit: cover;
+            border-radius: 0.25rem; /* for rounded corners */
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
@@ -72,7 +149,7 @@
             <div class="flex flex-wrap justify-center space-x-4">
                 <!-- Conceptualization -->
                 <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
-                    <img src="conceptualization.jpg" alt="Conceptualization" class="h-40 w-full object-cover rounded-md mb-4">
+                    <img src="conceptualization.jpg" alt="Conceptualization" class="card-img rounded-md mb-4">
                     <h4 class="font-bold text-steel-blue hover-card-title">Conceptualization</h4>
                     <p>Floor Plans</p>
                     <p>Cost Estimates</p>
@@ -82,7 +159,7 @@
                 </div>
                 <!-- Design -->
                 <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
-                    <img src="design.jpg" alt="Design" class="h-40 w-full object-cover rounded-md mb-4">
+                    <img src="design.jpg" alt="Design" class="card-img rounded-md mb-4">
                     <h4 class="font-bold text-steel-blue hover-card-title">Design</h4>
                     <p>Architectural Drawings</p>
                     <p>Structural Drawings</p>
@@ -92,7 +169,7 @@
                 </div>
                 <!-- Construction -->
                 <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
-                    <img src="construction.jpg" alt="Construction" class="h-40 w-full object-cover rounded-md mb-4">
+                    <img src="construction.jpg" alt="Construction" class="card-img rounded-md mb-4">
                     <h4 class="font-bold text-steel-blue hover-card-title">Construction</h4>
                     <p>Grey Structure</p>
                     <p>Finishing Touches</p>
@@ -102,7 +179,7 @@
                 </div>
                 <!-- Landscaping -->
                 <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
-                    <img src="landscaping.jpg" alt="Landscaping" class="h-40 w-full object-cover rounded-md mb-4">
+                    <img src="landscaping.jpg" alt="Landscaping" class="card-img rounded-md mb-4">
                     <h4 class="font-bold text-steel-blue hover-card-title">Landscaping</h4>
                     <p>Garden Design</p>
                     <p>Hardscaping</p>
@@ -115,13 +192,29 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="max-w-7xl mx-auto py-12">
+    <section id="projects" class="max-w-7xl mx-auto py-12 bg-mint">
         <h3 class="text-3xl font-bold text-center mb-6 text-steel-blue hover-card-title">Our Projects</h3>
-        <div class="flex flex-wrap justify-center">
-            <div class="w-60 h-60 bg-gray-300 m-2 flex items-center justify-center rounded-lg shadow hover-card transition duration-300">Commercial Plaza</div>
-            <div class="w-60 h-60 bg-gray-300 m-2 flex items-center justify-center rounded-lg shadow hover-card transition duration-300">Residential Complex</div>
-            <div class="w-60 h-60 bg-gray-300 m-2 flex items-center justify-center rounded-lg shadow hover-card transition duration-300">Urban Park</div>
-            <div class="w-60 h-60 bg-gray-300 m-2 flex items-center justify-center rounded-lg shadow hover-card transition duration-300">Luxury Villas</div>
+        <div class="flex flex-wrap justify-center space-x-4">
+            <!-- Commercial Plaza -->
+            <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
+                <img src="commercial_plaza.jpg" alt="Commercial Plaza" class="card-img rounded-md mb-4">
+                <h4 class="font-bold text-steel-blue hover-card-title">Commercial Plaza</h4>
+            </div>
+            <!-- Residential Complex -->
+            <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
+                <img src="residential_complex.jpg" alt="Residential Complex" class="card-img rounded-md mb-4">
+                <h4 class="font-bold text-steel-blue hover-card-title">Residential Complex</h4>
+            </div>
+            <!-- Urban Park -->
+            <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
+                <img src="urban_park.jpg" alt="Urban Park" class="card-img rounded-md mb-4">
+                <h4 class="font-bold text-steel-blue hover-card-title">Urban Park</h4>
+            </div>
+            <!-- Luxury Villas -->
+            <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
+                <img src="luxury_villas.jpg" alt="Luxury Villas" class="card-img rounded-md mb-4">
+                <h4 class="font-bold text-steel-blue hover-card-title">Luxury Villas</h4>
+            </div>
         </div>
     </section>
 
