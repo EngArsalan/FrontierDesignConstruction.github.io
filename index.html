@@ -5,22 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frontier Design and Construction</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* Option 2: Modern Blue & Teal Palette */
         .header-bg { background-color: #1c3553; color: #fff; }
         .footer-bg { background-color: #1c3553; color: #fff; }
-        .btn-coral { background-color: #ef6363; }
-        .bg-mint { background-color: #e8f6f5; }
-        .text-steel-blue { color: #4d7e9d; }
+        .btn-primary { background-color: #4a90a4; color: #fff; } /* Updated button color */
+        .btn-primary:hover { background-color: #62b5cb; } /* Brighter teal on hover */
+        .bg-light { background-color: #f8f8ff; } /* Updated background */
+        .text-primary { color: #1c3553; } /* For headings */
+        .text-secondary { color: #333333; } /* For body text */
+        /* Remove or update these if you're not using them */
+        /* .bg-mint { background-color: #e8f6f5; }  */
+        /* .text-steel-blue { color: #4d7e9d; } */
+
         .hover-card { transition: all 0.3s ease; }
-        .hover-card:hover { transform: translateY(-5px); background-color: #ef6363; color: white; }
+        .hover-card:hover { transform: translateY(-5px); background-color: #62b5cb; color: white; } /* Use accent color on hover */
         .hover-card-title:hover { color: #1c3553; transition: color 0.3s ease; }
-        .card-bg { background-color: #92cddb; }
+        .card-bg { background-color: #e0f2f7; } /* Lighter teal for cards */
         .card-img {
             height: 200px; /* Adjust as necessary for your design */
             width: 100%;
             object-fit: cover;
             border-radius: 0.25rem; /* for rounded corners */
         }
+
+        /* Remove the old fade animation - we'll handle transitions in JS */
+        /*
         .fade {
             animation: fadeEffect 1.5s ease;
         }
@@ -28,6 +39,8 @@
             from { opacity: .4 }
             to { opacity: 1 }
         }
+        */
+
         #about, #services {
             padding-top: 2rem;
             padding-bottom: 2rem; /* Adjust padding for better spacing control */
@@ -67,6 +80,84 @@
         .rounded-full {
             border-radius: 9999px;
         }
+         /* Slideshow Container */
+        #slideshow-container {
+            position: relative; /* Important for absolute positioning of children */
+            width: 100%;
+            overflow: hidden; /* Ensures slides don't spill out */
+        }
+
+        /* Individual Slides */
+        .mySlides {
+            display: none; /* Hidden by default, JS will show them */
+            width: 100%;
+            /* Add padding to the TOP and BOTTOM to make space for navigation */
+            padding-top: 50px;    /* Adjust as needed */
+            padding-bottom: 20px;  /* Reduced bottom padding - dots are handled separately */
+            padding-left: 200px;
+            padding-right: 200px;
+            box-sizing: border-box; /* Include padding in the element's total width/height */
+            text-align: center;
+        }
+
+        /* Dot Container */
+        .dot-container {
+            position: absolute;
+            bottom: 2%;       /*  Percentage-based positioning! */
+            left: 50%;
+            transform: translateX(-50%); /* Center horizontally */
+            z-index: 20; /* Higher than the slides */
+            text-align: center; /* Ensure dots are centered */
+        }
+
+        /* Navigation dots */
+            .dot {
+                cursor: pointer;
+                height: 18px; /* Increased size */
+                width: 18px;  /* Increased size */
+                margin: 0 4px;  /* More spacing */
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+                z-index: 20;     /* Higher z-index */
+            }
+
+            .active, .dot:hover {
+                background-color: #1c3553;
+            }
+
+        /* Navigation Arrows */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%); /* Correct vertical centering */
+            color: white;
+            font-size: 2rem; /* Larger arrows */
+            font-weight: bold;
+            cursor: pointer;
+            padding: 16px;
+            user-select: none;
+            z-index: 20;      /* Higher z-index */
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+        }
+
+        .prev {
+            left: 10px; /* Position on the left */
+        }
+
+        .next {
+            right: 10px; /* Position on the right */
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black on hover */
+        }
+    /* Slideshow Container */
+        .slideshow-container {
+        position: relative;
+        margin: auto;
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
@@ -80,77 +171,123 @@
             <h1 class="text-3xl font-extrabold text-white tracking-wide" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Frontier Design and Construction</h1>
         </div>
         <div class="flex space-x-4">
-            <a href="mailto:frontierdesignconstruction@gmail.com" class="flex items-center px-4 py-2 btn-coral text-white rounded-md hover:bg-red-600">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12l-4-4-4 4m8 0l-4 4-4-4" />
-                </svg>
+            <a href="mailto:frontierdesignconstruction@gmail.com" class="flex items-center px-4 py-2 btn-primary text-white rounded-md hover:bg-red-600">
+                <i class="fas fa-envelope h-5 w-5 mr-2"></i>
                 Email
             </a>
-            <a href="https://wa.me/923220391601" class="flex items-center px-4 py-2 btn-coral text-white rounded-md hover:bg-red-600">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.715 14.9l1.283-1.39.349-1.516-1.716-.153L8.171 9.9l2.246.447 1.603-1.049L10.309 8 10 5.515l1.309-.211.647-.004 1.983 2.189 1.246-.719.768.53-.95 1.396-.256 2.074-1.57.804 1.648 1.699L14 19h-5.5L8 15.5l.715-.6z" />
-                </svg>
+            <a href="https://wa.me/923220391601" class="flex items-center px-4 py-2 btn-primary text-white rounded-md hover:bg-red-600">
+                <i class="fab fa-whatsapp h-5 w-5 mr-2"></i>
                 WhatsApp
             </a>
-            <!-- Facebook and Tiktok -->
-            <a href="https://www.facebook.com/share/166ha8hhQK/?mibextid=wwXIfr/" class="flex items-center px-4 py-2 btn-coral text-white rounded-md hover:bg-red-600">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l-2 2m0 0l-2-2m2 2l2-2m-2 2l2-2m7-6a9.5 9.5 0 11-19 0 9.5 9.5 0 0119 0z" />
-                </svg>
+            <a href="https://www.facebook.com/share/166ha8hhQK/?mibextid=wwXIfr/" class="flex items-center px-4 py-2 btn-primary text-white rounded-md hover:bg-red-600">
+                <i class="fab fa-facebook h-5 w-5 mr-2"></i>
                 Facebook
             </a>
-            <a href="https://www.tiktok.com/@frontier.design.c?_t=ZS-8uEc34whvdf&_r=1" class="flex items-center px-4 py-2 btn-coral text-white rounded-md hover:bg-red-600">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l-2 2m0 0l-2-2m2 2l2-2m-2 2l2-2m7-6a9.5 9.5 0 11-19 0 9.5 9.5 0 0119 0z" />
-                </svg>
+            <a href="https://www.tiktok.com/@frontier.design.c?_t=ZS-8uEc34whvdf&_r=1" class="flex items-center px-4 py-2 btn-primary text-white rounded-md hover:bg-red-600">
+                <i class="fab fa-tiktok h-5 w-5 mr-2"></i>
                 Tiktok
             </a>
         </div>
     </div>
 </header>
-
 <!-- Main Content -->
 <main>
     <!-- Hero Section -->
-    <!-- Hero Section -->
-    <section id="home" class="bg-cover bg-center h-96 flex items-center justify-center" style=" margin-top: 0;">
-        <div class="p-6 rounded-lg text-center text-white" style="background-color: #92cddb;">
-            <div id="slideshow-container" class="relative h-full w-full">
+   <section id="home" class="bg-cover bg-center flex items-center justify-center" style=" margin-top: 0;">
+    <div class="p-6 rounded-lg text-center text-white relative" style="background-color: rgba(146, 205, 219, 0.8); width: 100%;">
+        <div id="slideshow-container" class="relative  w-full overflow-hidden">
                 <!-- Slide 1 -->
-                <div class="mySlides fade">
-                    <div class="text-4xl font-bold mb-4">Need help with designing?</div>
-                    <p class="text-lg">"We provide top-notch design services to bring your vision to life."</p>
+                <div class="mySlides">
+                    <div class="text-4xl font-bold mb-4">Bringing Your Architectural Vision to Life</div>
+                    <p class="text-lg">We craft exceptional spaces, meticulously designed and flawlessly executed. </p>
                 </div>
+
                 <!-- Slide 2 -->
-                <div class="mySlides fade">
+                <div class="mySlides">
                     <div class="text-4xl font-bold mb-4">Stuck with local contractors?</div>
-                    <p class="text-lg">"Our team ensures quality and reliability in every project."</p>
+                    <p class="text-lg">Our team ensures quality and reliability in every project. </p>
                 </div>
+
                 <!-- Slide 3 -->
-                <div class="mySlides fade">
+                <div class="mySlides">
                     <div class="text-4xl font-bold mb-4">Need an outclassed house?</div>
-                    <p class="text-lg">"We specialize in creating luxurious and functional living spaces."</p>
+                    <p class="text-lg">We specialize in creating luxurious and functional living spaces. </p>
                 </div>
+
                 <!-- Slide 4 -->
-                <div class="mySlides fade">
+                <div class="mySlides">
                     <div class="text-4xl font-bold mb-4">Need an architecturally designed house?</div>
-                    <p class="text-lg">"Our architects blend creativity and practicality to design your dream home."</p>
+                    <p class="text-lg">Our architects blend creativity and practicality to design your dream home. </p>
                 </div>
+
+                <!-- Slide 5 -->
+                <div class="mySlides">
+                    <div class="text-4xl font-bold mb-4">Sustainable Design for a Better Future</div>
+                    <p class="text-lg">We integrate eco-friendly practices and materials to create beautiful, responsible homes. </p>
+                </div>
+
+                <!-- Slide 6 -->
+                <div class="mySlides">
+                    <div class="text-4xl font-bold mb-4">Transform Your Existing Space</div>
+                    <p class="text-lg">We expertly renovate and remodel homes, maximizing their potential and enhancing their value. </p>
+                </div>
+
+                <!-- Slide 7 -->
+                <div class="mySlides">
+                    <div class="text-4xl font-bold mb-4">Designing Inspiring Commercial Spaces</div>
+                    <p class="text-lg">We create functional and aesthetically pleasing commercial buildings that enhance your brand. </p>
+                </div>
+
+                <!-- Slide 8 -->
+                <div class="mySlides">
+                    <div class="text-4xl font-bold mb-4">A Seamless Design & Build Process</div>
+                    <p class="text-lg">From initial concept to final construction, we guide you every step of the way.</p>
+                </div>
+
+                <!-- Slide 9 -->
+                <div class="mySlides">
+                    <div class="text-4xl font-bold mb-4">What Our Clients Say</div>
+                    <p class="text-lg">"They exceeded our expectations! The design was perfect, and the process was smooth." - John & Mary S. </p>
+                </div>
+
+                <!-- Slide 10 -->
+                <div class="mySlides">
+                    <div class="text-4xl font-bold mb-4">Ready to Start Your Dream Project?</div>
+                    <p class="text-lg">Let's discuss your vision and create something extraordinary together.</p>
+                </div>
+            <br>
+            <!-- Navigation dots (OUTSIDE the slides) -->
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+                <span class="dot" onclick="currentSlide(8)"></span>
+                <span class="dot" onclick="currentSlide(9)"></span>
+                <span class="dot" onclick="currentSlide(10)"></span>
             </div>
-        </div>
-    </section>
+        </div> <!-- End of #slideshow-container -->
+         <!-- Next and previous buttons (OUTSIDE the slideshow-container)-->
+            <a class="absolute prev left-0 top-1/2 transform -translate-y-1/2 text-white text-3xl font-bold cursor-pointer px-3 py-2 rounded-full hover:bg-gray-700 hover:bg-opacity-50" onclick="plusSlides(-1)">❮</a>
+            <a class="absolute next right-0 top-1/2 transform -translate-y-1/2 text-white text-3xl font-bold cursor-pointer px-3 py-2 rounded-full hover:bg-gray-700 hover:bg-opacity-50" onclick="plusSlides(1)">❯</a>
+
+    </div> <!-- This closes the div with the semi-transparent background -->
+</section>
 
     <!-- About Us Section -->
     <section id="about" class="max-w-7xl mx-auto py-12 px-4 bg-mint">
         <div class="flex flex-col md:flex-row items-center text-center md:items-start md:text-left space-y-4 md:space-y-0 md:space-x-6">
             <!-- Eng Arsalan -->
             <div class="flex-1">
-                <img src="images/placeholder/engineer_arsalan_khalid.jpg" alt="Chief Architect Photo" class="h-40 w-40 rounded-full object-cover object-top mx-auto md:mx-0">
+                <img src="images/placeholder/engineer_arsalan_khalid.jpg" alt="Chief Civil Engineer Arsalan Khalid Khan" class="h-40 w-40 rounded-full object-cover object-top mx-auto md:mx-0">
                 <h3 class="text-3xl font-bold text-steel-blue hover-card-title mt-4">Eng Arsalan Khalid Khan</h3>
-                <p>Chief Civil Engineer</p>
-                <p>PEC</p>
-                <p class="mt-4">
-                    Graduated from Cyprus International University, Arsalan has a wealth of experience in civil works and construction. Registered with the Washington Accord, MUDEK, and PEC.
+                <p class="text-secondary">Civil Engineer & Construction Expert</p>
+                <p class="text-secondary">Cyprus International University</p>
+                <p class="mt-4 text-secondary">
+                    From groundbreaking to final inspection, Arsalan's expertise ensures your project is built to last, on time, and within budget. With extensive knowledge in residential, commercial, and infrastructure projects, you can trust him to bring your vision to life with unwavering quality and precision.
                 </p>
             </div>
             <!-- Versus Divider -->
@@ -159,12 +296,12 @@
             </div>
             <!-- Architect Mashal -->
             <div class="flex-1">
-                <img src="images/placeholder/architect_mashal_haroon.jpg" alt="Chief Architect Photo" class="h-40 w-40 rounded-full object-cover object-top mx-auto md:mx-0">
+                <img src="images/placeholder/architect_mashal_haroon.jpg" alt="Chief Architect Mashal Haroon" class="h-40 w-40 rounded-full object-cover object-top mx-auto md:mx-0">
                 <h3 class="text-3xl font-bold text-steel-blue hover-card-title mt-4">Architect Mashal Haroon</h3>
-                <p>Chief Architect</p>
-                <p>UET</p>
-                <p class="mt-4">
-                    Graduated from the University of Engineering and Technology (UET), Mashal brings a wealth of experience in architectural design and project management.
+                 <p class="text-secondary">Chief Architect & Urban Planner</p>
+                  <p class="text-secondary">University of Engineering and Technology</p>
+                <p class="mt-4 text-secondary">
+                    Mashal blends innovative design with practical solutions to create spaces that inspire and function flawlessly. From luxurious homes to thriving commercial centers, her architectural vision shapes communities and elevates living experiences. Trust her to transform your ideas into stunning realities.
                 </p>
             </div>
         </div>
@@ -253,13 +390,13 @@
                 </div>
                 <div class="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition-shadow duration-300 hover:scale-105">
                     <img src="/images/projects_demos/almadinatower.jpg" alt="Almadinatower" class="card-img rounded-md mb-4">
-                    <h4 class="font-bold text-steel-blue hover-card-title mb-2">Almadinatower</h4>
+                    <h4 class="font-bold text-steel-blue hover-card-title mb-2">Al Madina Tower-Peshawar</h4>
                     <p class="text-left">A state-of-the-art residential tower offering luxurious living spaces.</p>
                 </div>
             </div>
             <!-- Navigation Buttons -->
-            <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full" onclick="slideLeft('commercial-slider')">❮</button>
-            <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full" onclick="slideRight('commercial-slider')">❯</button>
+            <!-- <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full" onclick="slideLeft('commercial-slider')">❮</button>
+            <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full" onclick="slideRight('commercial-slider')">❯</button> -->
         </div>
     </div>
 
@@ -272,28 +409,28 @@
                 <!-- 1 Kanal House -->
                 <div class="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition-shadow duration-300 hover:scale-105">
                     <img src="/images/projects_demos/1kanal_2.jpg" alt="1 Kanal House" class="card-img rounded-md mb-4">
-                    <h4 class="font-bold text-steel-blue hover-card-title mb-2">1 Kanal House</h4>
-                    <p class="text-left">A luxurious 1 Kanal house designed to meet the needs of a modern family.</p>
+                    <h4 class="font-bold text-steel-blue hover-card-title mb-2">Elegant Family Residence</h4>
+                    <p class="text-left">Spacious and beautifully appointed, this home offers a perfect blend of comfort and style.</p>
                 </div>
                 <div class="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition-shadow duration-300 hover:scale-105">
                     <img src="/images/projects_demos/1kanal_3.jpg" alt="1 Kanal House" class="card-img rounded-md mb-4">
-                    <h4 class="font-bold text-steel-blue hover-card-title mb-2">1 Kanal House</h4>
-                    <p class="text-left">A modern 1 Kanal house designed to meet the needs of a modern family.</p>
+                    <h4 class="font-bold text-steel-blue hover-card-title mb-2">Your Dream Home Awaits</h4>
+                    <p class="text-left">A welcoming residence, thoughtfully designed for modern family life.</p>
                 </div>
                 <div class="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition-shadow duration-300 hover:scale-105">
                     <img src="/images/projects_demos/1kanal_1.jpg" alt="1 Kanal House" class="card-img rounded-md mb-4">
-                    <h4 class="font-bold text-steel-blue hover-card-title mb-2">1 Kanal House</h4>
-                    <p class="text-left">A luxurious 1 Kanal house designed to meet the needs of a modern family.</p>
+                    <h4 class="font-bold text-steel-blue hover-card-title mb-2">Ultra-Modern Living</h4>
+                    <p class="text-left">Experience the pinnacle of contemporary design in this exceptional residence.</p>
                 </div>  
                 <!-- entrance_housing_scheme.jpg -->
                 <div class="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition-shadow duration-300 hover:scale-105">
                     <img src="/images/projects_demos/entrance_housing_scheme.jpg" alt="Entrance Housing Scheme" class="card-img rounded-md mb-4">
                     <h4 class="font-bold text-steel-blue hover-card-title mb-2">Entrance Housing Scheme</h4>
-                    <p class="text-left">A modern housing scheme designed to meet the needs of a modern family.</p>
+                    <p class="text-left">A thoughtfully planned housing scheme offering a secure and vibrant living environment.</p>
                 </div>
-                <!-- Navigation Buttons -->
+                <!-- Navigation Buttons
                 <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full" onclick="slideLeft('residential-slider')">❮</button>
-                <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full" onclick="slideRight('residential-slider')">❯</button>
+                <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full" onclick="slideRight('residential-slider')">❯</button> -->
             </div>
         </div>
 </section>
@@ -308,43 +445,81 @@
         </div>
     </section>
 </main>
-
 <!-- Footer -->
 <footer id="contact" class="footer-bg py-6">
     <div class="max-w-7xl mx-auto text-center">
-        <p class="mb-2">Contact Us: <a href="mailto:frontierdesignconstruction@gmail.com" class="text-red-400 hover:underline">frontierdesignconstruction@gmail.com</a> | <a href="https://wa.me/923220391601" class="text-red-400 hover:underline">+92 322 0391601</a></p>
-        <p class="mb-4">Follow us on:
+        <div class="mb-4">
+            <h4 class="text-lg font-semibold text-white mb-2">Visit Us</h4>
+            <!-- <div class="relative overflow-hidden" style="padding-bottom: 56.25%; width: 200px; margin: 0 auto;"> <!-- Reduced size & aspect ratio -->
+                <!-- <iframe
+                    src=""
+                    width="100%"
+                    height="100%"
+                    style="border:0; position: absolute; top:0; left: 0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div> --> 
+        </div>
+        <p class="mb-2 text-white">Contact Us: <a href="mailto:frontierdesignconstruction@gmail.com" class="text-red-400 hover:underline">frontierdesignconstruction@gmail.com</a> | <a href="https://wa.me/923220391601" class="text-red-400 hover:underline">+92 322 0391601</a></p>
+        <p class="mb-4 text-white">Follow us on:
             <a href="https://www.tiktok.com/@frontier.design.c?_t=ZS-8uEc34whvdf&_r=1 " class="text-blue-400 hover:underline">Tiktok</a> |
             <a href="https://www.facebook.com/share/166ha8hhQK/?mibextid=wwXIfr/" class="text-blue-400 hover:underline">Facebook</a>
         </p>
-        <p>&copy; 2023 Frontier Design and Construction</p>
+        <p class="text-white">© 2024 Frontier Design and Construction</p>
     </div>
 </footer>
 
 <script>
-    let slideIndex = 0;
-    showSlides();
+   let slideIndex = 1; // Start at 1, not 0
+    showSlides(slideIndex);
 
-    function showSlides() {
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
         let slides = document.getElementsByClassName("mySlides");
-        for (let i = 0; i < slides.length; i++) {
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
-        slideIndex++;
-        if (slideIndex > slides.length) { slideIndex = 1; }
-        slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 4000); // Change slide every 4 seconds
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
     }
-// Slide Left and Right
-    function slideLeft(sliderId) {
-        const slider = document.getElementById(sliderId);
-        slider.scrollBy({ left: -300, behavior: 'smooth' });
-    }
+    //Automatic Slideshow
+    let autoSlideIndex = 0;
+    autoShowSlides();
 
-    function slideRight(sliderId) {
-        const slider = document.getElementById(sliderId);
-        slider.scrollBy({ left: 300, behavior: 'smooth' });
-    }
+function autoShowSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  autoSlideIndex++;
+  if (autoSlideIndex > slides.length) {autoSlideIndex = 1}
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[autoSlideIndex-1].style.display = "block";
+  dots[autoSlideIndex-1].className += " active";
+  setTimeout(autoShowSlides, 5000); // Change image every 5 seconds
+}
 </script>
 </body>
 </html>
