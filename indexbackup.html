@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontier Design and Construction</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .header-bg { background-color: #1c3553; color: #fff; }
+        .footer-bg { background-color: #1c3553; color: #fff; }
+        .btn-coral { background-color: #ef6363; }
+        .bg-mint { background-color: #e8f6f5; }
+        .text-steel-blue { color: #4d7e9d; }
+        .hover-card { transition: all 0.3s ease; }
+        .hover-card:hover { transform: translateY(-5px); background-color: #ef6363; color: white; }
+        .hover-card-title:hover { color: #1c3553; transition: color 0.3s ease; }
+        .card-bg { background-color: #92cddb; }
+        .card-img {
+            height: 200px; /* Adjust as necessary for your design */
+            width: 100%;
+            object-fit: cover;
+            border-radius: 0.25rem; /* for rounded corners */
+        }
+
+        /* Fade-in Animation */
+        .fade {
+            animation: fadeEffect 1.5s ease;
+        }
+
+        @keyframes fadeEffect {
+            from { opacity: .4 }
+            to { opacity: 1 }
+        }
+
+        /* Adjustments to reduce spacing */
+        #about, #services {
+            padding-top: 2rem;
+            padding-bottom: 2rem; /* Adjust padding for better spacing control */
+        }
+
+        /* Adjustments to reduce spacing */
+        #home {
+            margin: 0; /* Remove margins */
+        }
+
+        /* Remove padding and margin from body and html elements */
+        body, html {
+            padding: 0;
+            margin: 0;
+        }
+            /* About Us Section Image */
+    #about img.h-40 {
+        height: 160px; /* Adjust height as needed */
+        width: 160px; /* Adjust width as needed */
+        object-fit: cover;
+        object-position: top; /* Adjust position to center vertically */
+        border-radius: 50%;
+    }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+<!-- Header -->
+<header class="header-bg shadow">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+        <div class="flex items-center space-x-4">
+            <img src="images/logo/Logo.jpg" alt="Company Logo" class="h-10">
+            <h1 class="text-2xl font-bold">Frontier Design and Construction</h1>
+        </div>
+        <div class="flex space-x-4">
+            <a href="mailto:frontierdesignconstruction@gmail.com" class="flex items-center px-4 py-2 btn-coral text-white rounded-md hover:bg-red-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12l-4-4-4 4m8 0l-4 4-4-4" />
+                </svg>
+                Email
+            </a>
+            <a href="https://wa.me/923220391601" class="flex items-center px-4 py-2 btn-coral text-white rounded-md hover:bg-red-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.715 14.9l1.283-1.39.349-1.516-1.716-.153L8.171 9.9l2.246.447 1.603-1.049L10.309 8 10 5.515l1.309-.211.647-.004 1.983 2.189 1.246-.719.768.53-.95 1.396-.256 2.074-1.57.804 1.648 1.699L14 19h-5.5L8 15.5l.715-.6z" />
+                </svg>
+                WhatsApp
+            </a>
+            <!-- Facebook and Tiktok -->
+            <a href="https://www.facebook.com/share/166ha8hhQK/?mibextid=wwXIfr/" class="flex items-center px-4 py-2 btn-coral text-white rounded-md hover:bg-red-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l-2 2m0 0l-2-2m2 2l2-2m-2 2l2-2m7-6a9.5 9.5 0 11-19 0 9.5 9.5 0 0119 0z" />
+                </svg>
+                Facebook
+            </a>
+            <a href="https://www.tiktok.com/@frontier.design.c?_t=ZS-8uEc34whvdf&_r=1" class="flex items-center px-4 py-2 btn-coral text-white rounded-md hover:bg-red-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l-2 2m0 0l-2-2m2 2l2-2m-2 2l2-2m7-6a9.5 9.5 0 11-19 0 9.5 9.5 0 0119 0z" />
+                </svg>
+                Tiktok
+            </a></svg></a>
+
+
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main>
+    <!-- Hero Section -->
+    <section id="home" class="bg-cover bg-center h-96 flex items-center justify-center" style="background-image: url('background.jpg'); margin-top: 0;">
+        <div class="p-6 rounded-lg text-center text-white" style="background-color: #92cddb;">
+            <div id="slideshow-container" class="relative h-full w-full">
+                <!-- Slide 1 -->
+                <div class="mySlides fade">
+                    <div class="text-4xl font-bold mb-4">Engineering Dreams into Reality</div>
+                    <p class="text-lg">"The road to success is always under construction."</p>
+                </div>
+                <!-- Slide 2 -->
+                <div class="mySlides fade">
+                    <div class="text-4xl font-bold mb-4">Engineering Dreams into Reality</div>
+                    <p class="text-lg">"Architecture should speak of its time and place, but yearn for timelessness."</p>
+                </div>
+                <!-- Slide 3 -->
+                <div class="mySlides fade">
+                    <div class="text-4xl font-bold mb-4">Engineering Dreams into Reality</div>
+                    <p class="text-lg">"Civil engineering is the art of directing the great sources of power in nature for the use and convenience of man."</p>
+                </div>
+                <!-- Slide 4 -->
+                <div class="mySlides fade">
+                    <div class="text-4xl font-bold mb-4">Engineering Dreams into Reality</div>
+                    <p class="text-lg">"Great architecture exists to create timeless, free, joyous spaces where the human spirit can soar."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="max-w-7xl mx-auto py-12 px-4 bg-mint">
+        <div class="flex flex-col items-center text-center md:flex-row md:items-start md:text-left">
+            <img src="images/placeholder/ARSALAN_PLACEHOLDER.jpg" alt="CEO Photo" class="h-40 w-40 rounded-full object-cover object-top mx-auto md:mx-0 md:mr-6 mb-4 md:mb-0">
+            <div>
+                <h3 class="text-3xl font-bold text-steel-blue hover-card-title">Arsalan Khalid Khan</h3>
+                <p>Architectural/Civil Engineer</p>
+                <p>CEO/OWNER</p>
+                <div class="mt-4 mb-2"></div>
+                <p class="mt-4">Registered with the Washington Accord, MUDEK, and the Pakistan Engineering Council. I hold a Bachelor's degree from Cyprus International University.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-mint py-12">
+        <div class="max-w-7xl mx-auto text-center">
+            <h3 class="text-3xl font-bold mb-6 text-steel-blue hover-card-title">Our Services</h3>
+            <div class="flex flex-wrap justify-center space-x-4">
+                <!-- Conceptualization -->
+                <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
+                    <img src="/images/conceptual/conceptualization.jpg" alt="Conceptualization" class="card-img rounded-md mb-4">
+                    <h4 class="font-bold text-steel-blue hover-card-title">Conceptualization</h4>
+                    <p>Floor Plans</p>
+                    <p>Cost Estimates</p>
+                    <p>BOQ or BQ</p>
+                    <p>Feasibility Studies</p>
+                    <p>Site Analysis</p>
+                </div>
+                <!-- Design -->
+                <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
+                    <img src="/images/conceptual/design.jpg" alt="Design" class="card-img rounded-md mb-4">
+                    <h4 class="font-bold text-steel-blue hover-card-title">Design</h4>
+                    <p>Architectural Drawings</p>
+                    <p>Structural Drawings</p>
+                    <p>3D Renderings</p>
+                    <p>Interior Design</p>
+                    <p>MEP (Mechanical, Electrical, and Plumbing) Design</p>
+                </div>
+                <!-- Construction -->
+                <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
+                    <img src="/images/conceptual/construction.jpg" alt="Construction" class="card-img rounded-md mb-4">
+                    <h4 class="font-bold text-steel-blue hover-card-title">Construction</h4>
+                    <p>Grey Structure</p>
+                    <p>Finishing Touches</p>
+                    <p>Project Management</p>
+                    <p>Quality Assurance</p>
+                    <p>Safety Management</p>
+                </div>
+                <!-- Landscaping -->
+                <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
+                    <img src="/images/conceptual/landscaping.jpg" alt="Landscaping" class="card-img rounded-md mb-4">
+                    <h4 class="font-bold text-steel-blue hover-card-title">Landscaping</h4>
+                    <p>Garden Design</p>
+                    <p>Hardscaping</p>
+                    <p>Irrigation Systems</p>
+                    <p>Outdoor Lighting</p>
+                    <p>Maintenance Services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="max-w-7xl mx-auto py-12 bg-mint">
+        <h3 class="text-3xl font-bold text-center mb-6 text-steel-blue hover-card-title">Our Projects</h3>
+        <div class="flex flex-wrap justify-center space-x-4">
+            <!-- Commercial Plaza -->
+            <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
+                <img src="/images/conceptual/commercial_plaza.jpg" alt="Commercial Plaza" class="card-img rounded-md mb-4">
+                <h4 class="font-bold text-steel-blue hover-card-title">Commercial Plaza</h4>
+            </div>
+            <!-- Residential Complex -->
+            <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
+                <img src="/images/conceptual/residential_complex.jpg" alt="Residential Complex" class="card-img rounded-md mb-4">
+                <h4 class="font-bold text-steel-blue hover-card-title">Residential Complex</h4>
+            </div>
+            <!-- Urban Park -->
+            <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
+                <img src="/images/conceptual/urban_park.jpg" alt="Urban Park" class="card-img rounded-md mb-4">
+                <h4 class="font-bold text-steel-blue hover-card-title">Urban Park</h4>
+            </div>
+            <!-- Luxury Villas -->
+            <div class="bg-white shadow p-4 rounded-lg mb-4 w-80 hover-card card-bg">
+                <img src="/images/conceptual/luxury_villas.jpg" alt="Luxury Villas" class="card-img rounded-md mb-4">
+                <h4 class="font-bold text-steel-blue hover-card-title">Luxury Villas</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="max-w-7xl mx-auto py-12 px-4 bg-mint">
+        <h3 class="text-3xl font-bold text-center mb-6 text-steel-blue hover-card-title">Client Testimonials</h3>
+        <div class="flex flex-wrap justify-center space-x-4">
+            <div class="bg-white shadow p-4 rounded-lg mb-4 w-full md:w-1/3 hover-card card-bg">
+                <p>"Frontier Design and Construction turned our Urban Park Dream Project into reality. Their attention to detail and professionalism were beyond our expectations!" - <strong>Army Welfare Trust Peshawar </strong></p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer id="contact" class="footer-bg py-6">
+    <div class="max-w-7xl mx-auto text-center">
+        <p class="mb-2">Contact Us: <a href="mailto:frontierdesignconstruction@hotmail.com" class="text-red-400 hover:underline">arsalankhalid21@hotmail.com</a> | <a href="https://wa.me/923220391601" class="text-red-400 hover:underline">+92 322 0391601</a></p>
+        <p class="mb-4">Follow us on:
+            <a href="https://www.tiktok.com/@frontier.design.c?_t=ZS-8uEc34whvdf&_r=1 " class="text-blue-400 hover:underline">Tiktok</a> |
+            <a href="https://www.facebook.com/share/166ha8hhQK/?mibextid=wwXIfr/" class="text-blue-400 hover:underline">Facebook</a>
+        </p>
+        <p>&copy; 2023 Frontier Design and Construction</p>
+    </div>
+</footer>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let slides = document.getElementsByClassName("mySlides");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 4000); // Change slide every 4 seconds
+    }
+</script>
+
+</body>
+</html>

@@ -71,13 +71,12 @@
 </head>
 <body class="bg-gray-100 text-gray-900">
 
-
 <!-- Header -->
 <header class="header-bg shadow">
     <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
         <div class="flex items-center space-x-4">
-            <img src="images/logo/Logo.png" alt="Company Logo" class="h-48">
-            <h1 class="text-3xl font-extrabold text-white tracking-wide" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Frontier Design and Construction</h1>
+            <img src="images/logo/Logo.jpg" alt="Company Logo" class="h-10">
+            <h1 class="text-2xl font-bold">Frontier Design and Construction</h1>
         </div>
         <div class="flex space-x-4">
             <a href="mailto:frontierdesignconstruction@gmail.com" class="flex items-center px-4 py-2 btn-coral text-white rounded-md hover:bg-red-600">
@@ -104,7 +103,9 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l-2 2m0 0l-2-2m2 2l2-2m-2 2l2-2m7-6a9.5 9.5 0 11-19 0 9.5 9.5 0 0119 0z" />
                 </svg>
                 Tiktok
-            </a>
+            </a></svg></a>
+
+
         </div>
     </div>
 </header>
@@ -143,24 +144,21 @@
     <!-- About Us Section -->
     <section id="about" class="max-w-7xl mx-auto py-12 px-4 bg-mint">
         <div class="flex flex-col md:flex-row items-center text-center md:items-start md:text-left space-y-4 md:space-y-0 md:space-x-6">
-            <!-- Eng Arsalan -->
-            <div class="flex-1">
-                <img src="images/placeholder/engineer_arsalan_khalid.jpg" alt="Chief Architect Photo" class="h-40 w-40 rounded-full object-cover object-top mx-auto md:mx-0">
-                <h3 class="text-3xl font-bold text-steel-blue hover-card-title mt-4">Eng Arsalan Khalid Khan</h3>
+            <img src="images/placeholder/engineer_arsalan_khalid.jpg" alt="Chief Architect Photo" class="h-40 w-40 rounded-full object-cover object-top mx-auto md:mx-0">
+            <div>
+                <h3 class="text-3xl font-bold text-steel-blue hover-card-title">Arsalan Khalid Khan</h3>
                 <p>Chief Civil Engineer</p>
                 <p>PEC</p>
                 <p class="mt-4">
                     Graduated from Cyprus International University, Arsalan has a wealth of experience in civil works and construction. Registered with the Washington Accord, MUDEK, and PEC.
                 </p>
             </div>
-            <!-- Versus Divider -->
-            <div class="flex items-center justify-center">
-                <h3 class="text-3xl font-bold text-steel-blue hover-card-title"></h3>
-            </div>
-            <!-- Architect Mashal -->
-            <div class="flex-1">
-                <img src="images/placeholder/architect_mashal_haroon.jpg" alt="Chief Architect Photo" class="h-40 w-40 rounded-full object-cover object-top mx-auto md:mx-0">
-                <h3 class="text-3xl font-bold text-steel-blue hover-card-title mt-4">Architect Mashal Haroon</h3>
+        </div>       
+        <br> 
+        <div class="flex flex-col md:flex-row items-center text-center md:items-start md:text-left space-y-4 md:space-y-0 md:space-x-6">
+            <img src="images/placeholder/architect_mashal_haroon.jpg" alt="Chief Architect Photo" class="h-40 w-40 rounded-full object-cover object-top mx-auto md:mx-0">
+            <div>
+                <h3 class="text-3xl font-bold text-steel-blue hover-card-title">Mashal Haroon</h3>
                 <p>Chief Architect</p>
                 <p>UET</p>
                 <p class="mt-4">
@@ -264,12 +262,11 @@
     </div>
 
     <!-- Residential Projects -->
-    <!-- Residential Projects -->
     <div>
         <h4 class="text-2xl font-bold text-center mb-4 text-steel-blue hover-card-title">Residential Projects</h4>
         <div class="relative">
             <div class="flex overflow-x-auto space-x-4" id="residential-slider">
-                <!-- 1 Kanal House -->
+                <!-- images/projects_demos/1kanal_2.jpg -->
                 <div class="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition-shadow duration-300 hover:scale-105">
                     <img src="/images/projects_demos/1kanal_2.jpg" alt="1 Kanal House" class="card-img rounded-md mb-4">
                     <h4 class="font-bold text-steel-blue hover-card-title mb-2">1 Kanal House</h4>
@@ -290,12 +287,12 @@
                     <img src="/images/projects_demos/entrance_housing_scheme.jpg" alt="Entrance Housing Scheme" class="card-img rounded-md mb-4">
                     <h4 class="font-bold text-steel-blue hover-card-title mb-2">Entrance Housing Scheme</h4>
                     <p class="text-left">A modern housing scheme designed to meet the needs of a modern family.</p>
-                </div>
-                <!-- Navigation Buttons -->
-                <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full" onclick="slideLeft('residential-slider')">❮</button>
-                <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full" onclick="slideRight('residential-slider')">❯</button>
             </div>
+            <!-- Navigation Buttons -->
+            <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full" onclick="slideLeft('residential-slider')">❮</button>
+            <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full" onclick="slideRight('residential-slider')">❯</button>
         </div>
+    </div>
 </section>
 
     <!-- Testimonials Section -->
@@ -335,7 +332,8 @@
         slides[slideIndex - 1].style.display = "block";
         setTimeout(showSlides, 4000); // Change slide every 4 seconds
     }
-// Slide Left and Right
+</script>
+<script>
     function slideLeft(sliderId) {
         const slider = document.getElementById(sliderId);
         slider.scrollBy({ left: -300, behavior: 'smooth' });
